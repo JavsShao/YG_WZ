@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import scrapy
 
+from WZ.items import WzItem
+
 
 class WenzhengSpider(scrapy.Spider):
     name = 'wenzheng'
@@ -8,10 +10,6 @@ class WenzhengSpider(scrapy.Spider):
     url = 'http://wz.sun0769.com/index.php/question/questionType?type=4&page='
     offset = 0
     start_urls = [url + str(offset)]
-
-    def __init__(self, name=None, **kwargs):
-        super().__init__(name=None, **kwargs)
-        self.parse_item = None
 
     def parse(self, response):
         # 取出每个页面里面帖子链接列表
@@ -24,4 +22,13 @@ class WenzhengSpider(scrapy.Spider):
         if self.offset <= 71130:
             self.offset += 30
             yield scrapy.Request(self.url + str(self.offset), callback=self.parse)
+
+    def parse_item(self, response):
+        """
+        解析源码
+        :param response:
+        :return:
+        """
+        item = WzItem()
+
 
