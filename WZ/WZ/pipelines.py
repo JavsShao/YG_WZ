@@ -16,4 +16,6 @@ class WzPipeline(object):
         '''
         self.filename = codecs.open('wenzheng.json', 'w', encoding='utf-8')
     def process_item(self, item, spider):
+        content = json.dumps(dict(item), ensure_ascii=False) + '\n'
+        self.filename.write(content)
         return item
