@@ -66,7 +66,7 @@ ROBOTSTXT_OBEY = True
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    # 'WZ.pipelines.WzPipeline': 300,
-    'WZ.pipelines.Wzpipline': 300,
+    'WZ.pipelines.WzPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
