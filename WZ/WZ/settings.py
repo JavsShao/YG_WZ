@@ -89,3 +89,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# 日志文件名和处理等级
+LOG_FILE = "dg.log"
+LOG_LEVEL = "DEBUG"
